@@ -15,6 +15,10 @@ defmodule Maxi.Consumer do
     end
   end
 
+  def handle_event(_event) do
+    :noop
+  end
+
   def handle_mom(msg) do
     case msg.content do
       ">hello" -> Api.create_message(msg.channel_id, "HI MOM! I LOVE YOU!!")
@@ -30,7 +34,5 @@ defmodule Maxi.Consumer do
     end
   end
 
-  def handle_event(_event) do
-    :noop
-  end
+
 end
